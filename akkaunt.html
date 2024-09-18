@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CopySite</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- Swiper CSS  -->
+    <link rel="stylesheet" href="swiper%408.4.7/swiper-bundle.min.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="npm/bootstrap-icons%401.8.1/font/bootstrap-icons.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Style CSS  -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    .template-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 120px;
+        margin-bottom: 20px;
+        margin-trim: 10px;
+    }
+
+    .template-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .template-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .template-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .template-info {
+        padding: 20px;
+    }
+
+    .template-name {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .template-description {
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .template-features {
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+
+    .template-features li {
+        margin-bottom: 5px;
+    }
+
+    .template-features li::before {
+        content: "✓";
+        color: #4CAF50;
+        margin-right: 5px;
+    }
+
+    .template-price {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #0066cc;
+        margin-bottom: 15px;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0066cc;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        text-align: center;
+    }
+
+    .button:hover {
+        background-color: #0052a3;
+    }
+</style>
+
+<body>
+
+    <!-- START: Header  -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <!-- Logo -->
+            <a href="./index.html" class="logo">
+                <i class="bi bi-book"></i>
+                CopySite
+            </a>
+
+            <!-- Menu Btn -->
+            <button class="navbar-toggler fs-1" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mt-5 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./index.html">
+                            Asosiy
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./organish/organish.html">
+                            O'rganish
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./components.html">
+                            Componentlar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./shablonlar.html">
+                            Shablonlar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./domenlar.html">
+                            Domenlar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="font-size: 40px;margin-top: -13px;" class="nav-link" aria-current="page" href="./akkaunt.html">
+                            ❤️
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+<h1>Like Qilingan Template-lar</h1>
+<div id="likedTemplatesContainer"></div>
+
+<script>
+    // Like qilingan template-larni ko'rsatish funksiyasi
+    function displayLikedTemplates() {
+        const likedTemplates = JSON.parse(localStorage.getItem('likedTemplates')) || [];
+        const container = document.getElementById('likedTemplatesContainer');
+        container.innerHTML = '';
+
+        likedTemplates.forEach(template => {
+            const templateDiv = document.createElement('div');
+            templateDiv.classList.add('liked-template');
+            templateDiv.innerHTML = `
+                <h2>${template.name}</h2>
+                <p>Narxi: ${template.price}</p>
+            `;
+            container.appendChild(templateDiv);
+        });
+    }
+
+    // Like qilingan template-larni sahifaga yuklash
+    window.onload = displayLikedTemplates;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <footer>
+        <div class="content">
+            <div class="top">
+                <div class="logo-details">
+                    <i class="fab fa-slack"></i>
+                    <span style="color: white;" class="logo_name">CopySite</span>
+                </div>
+                <div class="media-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="link-boxes">
+                <ul class="box">
+                    <li class="link_name">O'rganish</li>
+                    <li><a href="#">Sayt haqida</a></li>
+                    <li><a href="#">Kompanentlar haqida</a></li>
+                    <li><a href="#">Shablonlar haqida</a></li>
+                    <li><a href="#">Domenlar haqida</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Componentlar</li>
+                    <li><a href="#">Header</a></li>
+                    <li><a href="#">Main</a></li>
+                    <li><a href="#">Footer</a></li>
+                    <li><a href="#">Akkaunt</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Shablonlar</li>
+                    <li><a href="#">Html, Css </a></li>
+                    <li><a href="#">React</a></li>
+                    <li><a href="#">Next js</a></li>
+                    <li><a href="#">Tailwind</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Domenlar</li>
+                    <li><a href="#">UZ domenlar</a></li>
+                    <li><a href="#">RU domenlar</a></li>
+                    <li><a href="#">COM domenlar</a></li>
+                    <li><a href="#">Noyob Domenlar</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Qonun qoidalar</li>
+                    <li><a href="#">Foydalanish shartlari</a></li>
+                    <li><a href="#">Biz bilan bog'lanish</a></li>
+                    <li><a href="#">Takliflar</a></li>
+                    <li><a href="#">Bu sayt nima uchun hizmat qiladi!</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+    <!-- END: Footer  -->
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Validator to check the form for completeness  -->
+    <script src="npm/jquery-validation%401.19.3/dist/jquery.validate.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="swiper%408.4.7/swiper-bundle.min.js"></script>
+
+    <!-- Script JS -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
